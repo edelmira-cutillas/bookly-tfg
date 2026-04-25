@@ -177,3 +177,36 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
     .sidebar h3, .sidebar ul li { color: var(--color-primario); }
     .sidebar ul li i { color: var(--color-primario); }
 }
+
+/* Slideshow */
+.f-carousel {
+  --f-carousel-gap: 5px;
+  height: 280px;
+    --f-carousel-slide-width: 120px;
+  --f-carousel-gap: 4px;
+}
+
+.f-carousel__slide {
+  flex: 0 0 120px;
+  height: 180px;
+  overflow: hidden;
+}
+
+.f-carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.f-carousel__viewport {
+  overflow: hidden;
+}
+
+.f-carousel__track {
+  display: flex;
+  align-items: center;
+}
+
+#myCarousel {
+  --f-carousel-gap: 20px;
+}

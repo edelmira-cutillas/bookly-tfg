@@ -1,4 +1,4 @@
-</div> <footer class="main-footer">
+    <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-column branding">
                 <div class="logo">
@@ -41,6 +41,10 @@
     </footer>
 
     <div id="sidebarOverlay" class="sidebar-overlay"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.arrows.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.dots.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.autoscroll.umd.js"></script>
 
     <script>
         const menuToggle = document.getElementById('menuToggle');
