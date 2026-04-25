@@ -1,4 +1,4 @@
-</div> <footer class="main-footer">
+    <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-column branding">
                 <div class="logo">
