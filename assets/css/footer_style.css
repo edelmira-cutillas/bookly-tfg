@@ -1,0 +1,115 @@
+/* ESTILO FOOTER (BOOKLY) */
+
+.main-footer {
+    background: var(--color-primario);
+    color: var(--color-texto-claro);
+    padding: 60px 20px 20px 20px;
+    margin-top: auto;
+    border-top: 5px solid var(--color-secundario);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.footer-column h4 {
+    font-family: var(--font-titulos);
+    color: var(--color-secundario);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* Enlaces */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    color: var(--color-gris-suave);
+    font-family: var(--font-subtitulos);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: var(--color-secundario);
+    padding-left: 5px;
+}
+
+.branding .logo-footer {
+    color: var(--color-secundario);
+    font-family: var(--font-titulos);
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.branding p {
+    font-size: 0.9rem;
+    color: var(--color-gris-suave);
+    max-width: 300px;
+    line-height: 1.5;
+}
+
+/* Redes Sociales */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    background: #333;
+    color: var(--color-secundario);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    background: var(--color-secundario);
+    color: var(--color-primario);
+    transform: translateY(-5px);
+}
+
+/* Línea inferior */
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.8rem;
+    color: var(--color-gris-suave);
+}
+
+.footer-bottom span {
+    color: var(--color-secundario);
+    font-weight: bold;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablet y Escritorio */
+@media (min-width: 768px) {
+    .footer-container {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}

@@ -1,0 +1,19 @@
+/* --- VARIABLES --- */
+
+:root {
+    --color-primario: #1A1A1A;
+    --color-secundario: #E7C6C6;
+    --color-fondo: #FDFDFD;
+    --color-gris-suave: #8E8E8E;
+    --color-texto-claro: #FDFDFD;
+
+    --font-titulos: 'com', sans-serif;
+    --font-subtitulos: 'pop', sans-serif;
+    --font-cuerpo: 'mont', sans-serif;
+}
+
+/* --- FUENTES --- */
+
+@font-face { font-family: com; src: url(../recursos/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf); }
+@font-face { font-family: mont; src: url(../recursos/fonts/Montserrat/Montserrat-VariableFont_wght.ttf); }
+@font-face { font-family: pop; src: url(../recursos/fonts/Poppins/Poppins-Regular.ttf); }

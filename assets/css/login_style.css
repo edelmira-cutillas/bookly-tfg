@@ -1,0 +1,209 @@
+/* LOGIN Y REGISTER BOOKLY */
+
+/* Base */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    background-color: var(--color-fondo);
+    color: var(--color-primario);
+    font-family: var(--font-cuerpo);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Tarjetas */
+.login-card, .register-card {
+    background: var(--color-fondo);
+    border: 3px solid var(--color-primario);
+    padding: 25px 20px;
+    width: 100%;
+    box-shadow: 6px 6px 0px var(--color-secundario);
+    transition: all 0.3s ease;
+}
+
+/* Encabezados */
+.login-header, .register-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-header i, .register-header i {
+    font-size: 2rem;
+    color: var(--color-secundario);
+    background: var(--color-primario);
+    padding: 15px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.login-header h2, .register-header h2 {
+    font-family: var(--font-titulos);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+/* Formulario */
+.form-group { margin-bottom: 15px; }
+.form-group label {
+    display: block;
+    font-family: var(--font-subtitulos);
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+}
+
+.input-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.input-icon i {
+    position: absolute;
+    left: 15px;
+    color: var(--color-primario);
+}
+.input-icon input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 2px solid var(--color-primario);
+    font-family: var(--font-cuerpo);
+    font-size: 1rem;
+    background: var(--color-fondo);
+    outline: none;
+}
+.input-icon input:focus {
+    background-color: #fff9f9;
+    border-color: var(--color-secundario);
+}
+
+/* Botón */
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: var(--color-primario);
+    color: var(--color-secundario);
+    border: none;
+    font-family: var(--font-subtitulos);
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.2s;
+}
+
+/* Pies tarjeta */
+.login-footer, .form-footer {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.login-footer p, .form-footer p { font-size: 0.85rem; }
+.login-footer a, .form-footer a {
+    color: var(--color-primario);
+    font-weight: bold;
+    text-decoration: none;
+}
+.login-footer a:hover, .form-footer a:hover { text-decoration: underline; }
+
+.back-link { font-size: 0.8rem; color: var(--color-gris-suave) !important; text-decoration: none; }
+.error-msg { color: #d9534f; font-size: 0.8rem; font-weight: bold; margin-top: 5px; display: block; }
+
+
+/* MEDIA QUERIES */
+
+/* Tablet */
+
+@media (min-width: 768px) {
+    .login-card { max-width: 450px; }
+    .register-card { max-width: 500px; }
+    
+    .login-card, .register-card {
+        padding: 40px;
+        box-shadow: 10px 10px 0px var(--color-secundario);
+    }
+
+    .login-header h2, .register-header h2 { font-size: 1.8rem; }
+    .login-header i, .register-header i { font-size: 2.5rem; padding: 20px; }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .content-center { padding: 40px 20px; }
+
+    /* Tarjetas */
+    .login-card, .register-card {
+        width: 85%;
+        padding: 60px 80px;
+        box-shadow: 25px 25px 0px var(--color-secundario);
+    }
+
+    /* Grid Login */
+    .login-card {
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .login-header {
+        text-align: center;
+        border-right: 2px solid var(--color-secundario);
+        padding-right: 40px;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .login-footer {
+        grid-column: span 2;
+        margin-top: 40px;
+        border-top: 1px solid var(--color-secundario);
+        padding-top: 20px;
+    }
+
+    /* Grid Register */
+    .register-card { max-width: 1000px; }
+    
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        align-items: start;
+    }
+
+    .register-header, .form-footer { grid-column: span 2; }
+    .register-header { border-bottom: 2px solid var(--color-secundario); padding-bottom: 20px; }
+
+    /* Hover */
+    .btn-submit:hover {
+        transform: translate(-3px, -3px);
+        box-shadow: 3px 3px 0px var(--color-primario);
+        background: var(--color-secundario);
+        color: var(--color-primario);
+    }
+}
