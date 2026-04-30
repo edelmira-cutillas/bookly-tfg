@@ -1,4 +1,36 @@
-<?php 
+<?php
+session_start();
+require_once '../utils/conexion.php'; 
+require_once '../clases/Usuario.php';
+
+require_once __DIR__ . '/../utils/conexion.php'; 
+
+$error = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $_POST['email'] ?? '';
+    $password = $_POST['password'] ?? '';
+
+    $usuarioModel = new Usuario($conexion);
+    $usuario = $usuarioModel->obtenerPorEmail($email);
+
+    if ($usuario && $usuario->verificarPassword($password)) {
+        // Guardar datos en la sesión
+        $_SESSION['user_id'] = $usuario->id;
+        $_SESSION['user_nombre'] = $usuario->nombre;
+        $_SESSION['user_rol'] = $usuario->rol; // 'usuario' o 'administrador'
+
+        if ($usuario->rol === 'administrador') {
+            header("Location: ../admin/home_admin.php");
+        } else {
+            header("Location: ../user/home_user.php");
+        }
+        exit;
+    } else {
+        $error = "Credenciales no válidas. Inténtalo de nuevo.";
+    }
+}
+
 $css = ["login_style.css", "header_login_style.css", "footer_style.css", "variables.css"];
 include '../includes/header_log.php'; 
 ?>
@@ -6,19 +38,24 @@ include '../includes/header_log.php';
 <main class="content-center">
     <div class="login-card">
         <div class="login-header">
-            <i class="fa-solid fa-lock"></i>
+            <i class="fa-solid fa-circle-user"></i>
             <h2>Identifícate</h2>
-            <p>Accede a tu biblioteca personal</p>
+            <p>Accede a tu panel de Bookly</p>
         </div>
 
-        <form id="loginForm" action="procesar_login.php" method="POST" class="form-bookly">
+        <?php if ($error){ ?>
+            <div class="error-banner">
+                <i class="fa-solid fa-triangle-exclamation"></i> <?php echo $error; ?>
+            </div>
+        <?php } ?>
+
+        <form id="loginForm" action="login.php" method="POST" class="form-bookly">
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Correo Electrónico</label>
                 <div class="input-icon">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
                 </div>
-                <span class="error-msg" id="emailError"></span>
             </div>
 
             <div class="form-group">
@@ -27,17 +64,18 @@ include '../includes/header_log.php';
                     <i class="fa-solid fa-key"></i>
                     <input type="password" id="password" name="password" placeholder="••••••••" required>
                 </div>
-                <span class="error-msg" id="passError"></span>
             </div>
 
-            <button type="submit" class="btn-submit">Entrar a Bookly</button>
+            <button type="submit" class="btn-submit">Entrar ahora</button>
         </form>
 
         <div class="login-footer">
-            <p>¿No tienes cuenta? <a href="register.php">Regístrate aquí</a></p>
+            <p>¿Eres nuevo? <a href="register.php">Crea tu cuenta</a></p>
             <a href="../index.php" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver al inicio</a>
         </div>
     </div>
 </main>
+
+<script src="../assets/js/validaciones_auth.js"></script>
 
 <?php include '../includes/footer_log.php'; ?>

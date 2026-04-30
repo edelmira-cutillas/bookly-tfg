@@ -1,6 +1,7 @@
 /* INDEX BOOKLY */
 
 /* Base */
+
 * { 
     box-sizing: border-box; 
     margin: 0; padding: 0; 
@@ -16,6 +17,7 @@ body {
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 
 /* Header */
+
 .main-header {
     display: flex; 
     justify-content: space-between; 
@@ -45,6 +47,7 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 .logo img { height: 35px; width: auto; object-fit: contain; }
 
 /* Botones */
+
 .btn-login {
     font-family: var(--font-subtitulos);
     font-weight: 600;
@@ -66,6 +69,7 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 }
 
 /* Sidebar */
+
 .sidebar {
     position: fixed;
     top: 0; left: -260px; 
@@ -102,9 +106,11 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 .sidebar-overlay.active { display: block; }
 
 /* Contenido principal */
+
 .app-container { padding: 20px; }
 
 /* Bienvenida */
+
 .welcome-card {
     background: var(--color-primario);
     border: 1px solid var(--color-secundario); 
@@ -129,6 +135,7 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 }
 
 /* Tarjetas */
+
 .card-section {
     background: var(--color-gris-suave);
     border: 1px solid var(--color-primario); 
@@ -179,6 +186,7 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 }
 
 /* Slideshow */
+
 .f-carousel {
   --f-carousel-gap: 5px;
   height: 280px;

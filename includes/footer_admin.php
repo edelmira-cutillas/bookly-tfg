@@ -2,7 +2,7 @@
         <div class="footer-container">
             <div class="footer-column branding">
                 <div class="logo">
-                    <span><img src="assets/img/logo.png" alt="Bookly Logo"></span> 
+                    <span><img src="../assets/img/logo.png" alt="Bookly Logo"></span> 
                     Bookly
                 </div>
                 <p>Tu biblioteca personal digital. Organiza, lee y comparte tu pasión por los libros.</p>
@@ -42,20 +42,6 @@
 
     <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('sidebarOverlay');
-
-        menuToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('active');
-        });
-
-        overlay.addEventListener('click', () => {
-            sidebar.classList.remove('active');
-            overlay.classList.remove('active');
-        });
-    </script>
+    <script src="../assets/js/footer.js"></script>
 </body>
 </html>

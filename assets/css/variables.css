@@ -14,6 +14,6 @@
 
 /* --- FUENTES --- */
 
-@font-face { font-family: com; src: url(../recursos/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf); }
-@font-face { font-family: mont; src: url(../recursos/fonts/Montserrat/Montserrat-VariableFont_wght.ttf); }
-@font-face { font-family: pop; src: url(../recursos/fonts/Poppins/Poppins-Regular.ttf); }
+@font-face { font-family: com; src: url(/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf); }
+@font-face { font-family: mont; src: url(/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf); }
+@font-face { font-family: pop; src: url(/assets/fonts/Poppins/Poppins-Regular.ttf); }

@@ -1,0 +1,226 @@
+/* HEADER USUARIO */
+* { 
+    box-sizing: border-box; 
+    margin: 0; padding: 0; 
+}
+
+.main-header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 15px; 
+    border-bottom: 2px solid var(--color-primario); 
+    background: var(--color-secundario);
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header i {
+    color: var(--color-primario); 
+}
+
+.header-left, .header-right { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+}
+
+.logo {
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    font-weight: bold;
+    color: var(--color-primario);
+    font-family: var(--font-titulos);
+    font-size: 1.2rem;
+}
+
+.logo img {
+    height: 35px; 
+    width: auto; 
+    object-fit: contain; 
+}
+
+.search-bar-desktop, .user-name { 
+    display: none; 
+} 
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-subtitulos);
+    font-weight: 600;
+}
+
+/* Sidebar */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px; 
+    width: 250px;
+    height: 100vh;
+    background: var(--color-primario);
+    z-index: 1001;
+    transition: 0.3s ease;
+    padding: 20px;
+    border-right: 2px solid var(--color-secundario);
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    list-style: none;
+}
+
+.sidebar h3 {
+    color: var(--color-secundario);
+    font-family: var(--font-titulos);
+}
+
+.sidebar li {
+    color: var(--color-texto-claro);
+    font-family: var(--font-subtitulos);
+}
+
+.sidebar li i {
+    color: var(--color-secundario); 
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(26, 26, 26, 0.6); 
+    display: none;
+    z-index: 1000;
+}
+
+.sidebar-overlay.active { 
+    display: block; 
+}
+
+.logoFinal {
+    margin-top: auto;
+}
+
+.app-container { 
+    padding: 15px; 
+}
+
+/* Usuario */
+.user-profile {
+    position: relative;
+    padding: 10px 0;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    display: none;
+    z-index: 9999;
+    border: 1px solid #eee;
+}
+
+.user-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-dropdown ul li a {
+    display: block;
+    padding: 12px 16px;
+    color: #444;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.user-dropdown ul li a:hover {
+    background-color: #f8f9fa;
+    color: var(--color-secundario); /* Color de tu marca */
+}
+
+.user-dropdown .logout-item {
+    border-top: 1px solid #eee;
+}
+
+.user-dropdown .logout-item a:hover {
+    color: var(--color-secundario);
+}
+
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
+    .search-bar-desktop { 
+        display: block; 
+    }
+
+    #descubrir {
+        background-color: var(--color-primario);
+        color: var(--color-secundario);
+        border: 1px solid var(--color-primario);
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-family: var(--font-subtitulos);
+        font-size: 0.85rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    #descubrir:hover {
+        background-color: var(--color-fondo);
+        color: var(--color-primario);
+    }
+
+    .search-icon { 
+        display: none; 
+    }
+}
+
+@media (min-width: 1024px) {
+    .user-name { 
+        display: inline; 
+        color: var(--color-primario); 
+    }
+
+    .menu-btn { display: none; }
+
+    .sidebar {
+        position: static;
+        left: 0;
+        height: auto;
+        width: 200px;
+        box-shadow: none;
+        background: transparent;
+        border: none;
+    }
+
+    .sidebar li {
+        color: var(--color-primario); 
+    }
+
+    .app-container {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logoFinal {
+        display: none;
+    }
+}
